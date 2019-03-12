@@ -212,6 +212,7 @@ return [
         'Magento_WishlistSampleData' => 1,
         'Mageplaza_HelloWorld' => 1,
         'Mgt_DeveloperToolbar' => 1,
+        'OpenTechiz_Blog' => 1,
         'Temando_Shipping' => 1,
         'Testpart5_One' => 1,
         'Vertex_Tax' => 1
