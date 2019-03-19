@@ -32,5 +32,7 @@ class UpgradeData implements UpgradeDataInterface
             $setup->getConnection()->insert($setup->getTable('table_one_part5'), $data);
             $installer->endSetup();
         }
+
+
     }
 }

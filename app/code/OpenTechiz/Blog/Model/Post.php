@@ -6,7 +6,7 @@ class Post extends \Magento\Framework\Model\AbstractModel implements  PostInterf
     const STATUS_ENABLED = 1;
     const STATUS_DISABLED = 0;
 
-    protected  $_eventPrefix = 'Blog_post';
+    protected  $_eventPrefix = 'blog_post';
 
     protected function _construct()
     {
