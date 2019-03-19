@@ -1,0 +1,23 @@
+<?php
+foreach ($block->getInfo() as $item):?>
+<ul>
+<li>
+    <h3>
+        <?php echo $item->getData()['title']; ?>
+    </h3>
+</li>
+
+<li>
+    <h4>
+        <?php echo $item->getData()['content'];?>
+    </h4>
+</li>
+
+<li>
+    <h4>
+        <a href=" <?php echo $item->getData()['url_key']; ?>">Link data</a>
+    </h4>
+</li>
+    <?php endforeach;?>
+</ul>
+

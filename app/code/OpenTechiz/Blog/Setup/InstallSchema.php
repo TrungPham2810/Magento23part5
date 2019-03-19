@@ -13,24 +13,27 @@ class InstallSchema implements InstallSchemaInterface
         $installer = $setup;
         $installer->startSetup();
         $table = $installer->getConnection()
-            ->newTable($installer->getTable('opentechiz_blog_post'))
+            ->newTable($installer->getTable('opentechiz_blog_post')
+            )
             ->addColumn(
                 'post_id',
-                \Magento\Framework\DB\Ddl\Table::TYPE_SMALLINT,
+                \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
                 null,
                 ['identity'=> true, 'nullable' => false, 'primary'=> true],
                 'Post ID'
             )
             ->addColumn(
                 'url_key',
-                \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,255,
+                \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                255,
                 ['nullable'=> true, 'default'=> null]
                 )
             ->addColumn(
                 'title',
                 \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 255,
-                ['nullable'=> false, 'Blog Title']
+                ['nullable'=> false ],
+                'Blog Title'
                 )
             ->addColumn(
                 'content',
@@ -41,26 +44,26 @@ class InstallSchema implements InstallSchemaInterface
                 )
             ->addColumn(
                 'is_active',
-                \Magento\Framework\DB\Ddl\Table::TYPE_SMALLINT,
+                \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
                 null,
                 ['nullable'=>false, 'default'=>'1'],
                 'Is Post Active'
                 )
             ->addColumn(
                 'creation_time',
-                \Magento\Framework\DB\Ddl\Table::TYPE_DATETIME,
+                \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
                 null,
-                ['nullable'=>false],
+                ['nullable'=>false, 'default' => \Magento\Framework\DB\Ddl\Table::TIMESTAMP_INIT],
                 'Creation Time'
                 )
             ->addColumn(
                 'update_time',
-                \Magento\Framework\DB\Ddl\Table::TYPE_DATETIME,
+                \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
                 null,
-                ['nullable'=>false],
+                ['nullable'=>false, 'default' => \Magento\Framework\DB\Ddl\Table::TIMESTAMP_INIT_UPDATE],
                 'Update Time'
                 )
-            ->addIndex($installer->getIdxName('blog_post',['url_key'], ['url_key']))
+            ->addIndex($installer->getIdxName('blog_post',['url_key']), ['url_key'])
             ->setComment('Blog Posts');
         $installer->getConnection()->createTable($table);
         $installer->endSetup();

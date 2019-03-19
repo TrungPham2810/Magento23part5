@@ -7,6 +7,7 @@ return [
         'Magento_Backend' => 1,
         'Magento_Cron' => 1,
         'Ho_Templatehints' => 1,
+        'Inchoo_CustomRouter' => 1,
         'Magento_Variable' => 1,
         'Magento_Eav' => 1,
         'Magento_AdminNotification' => 1,
@@ -213,6 +214,7 @@ return [
         'Mageplaza_HelloWorld' => 1,
         'Mgt_DeveloperToolbar' => 1,
         'OpenTechiz_Blog' => 1,
+        'PHPCuong_BannerSlider' => 1,
         'Temando_Shipping' => 1,
         'Testpart5_One' => 1,
         'Vertex_Tax' => 1
