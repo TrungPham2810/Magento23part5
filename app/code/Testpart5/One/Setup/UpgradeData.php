@@ -30,9 +30,9 @@ class UpgradeData implements UpgradeDataInterface
 //            $post = $this->_postFactory->create();
 //            $post->addData($data)->save();
             $setup->getConnection()->insert($setup->getTable('table_one_part5'), $data);
+
             $installer->endSetup();
         }
-
 
     }
 }

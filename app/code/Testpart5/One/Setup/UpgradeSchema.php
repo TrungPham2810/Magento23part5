@@ -27,9 +27,9 @@ class UpgradeSchema implements UpgradeSchemaInterface
         }
 
         $table = $installer->getConnection()
-            ->newTable($installer->getTable('data_example'))
+            ->newTable($installer->getTable('comment_table'))
             ->addColumn(
-                'example_id',
+                'id',
                 \Magento\Framework\Db\Ddl\Table::TYPE_INTEGER,
                 null,
                 ['identity' => true, 'nullable' => false, 'primary' => true, 'unsigned' => true],

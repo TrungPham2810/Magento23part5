@@ -28,6 +28,12 @@ class InstallData implements InstallDataInterface
 //        $post = $this->_postFactory->create();
 //        $post->addData($data)->save();
         $setup->getConnection()->insert($setup->getTable('table_one_part5'), $data);
+        $data2 = [
+            'title'         => "Magento 2 Events",
+            'content'       => "oWorld to exercise this lesson."
+
+        ];
+        $setup->getConnection()->insert($setup->getTable('data_example'), $data2);
         $installer->endSetup();
     }
 }
