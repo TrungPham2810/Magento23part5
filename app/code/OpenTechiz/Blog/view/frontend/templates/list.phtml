@@ -1,0 +1,69 @@
+<h1><?php echo __('Latest Blog Posts')?></h1>
+
+<ul class="blog-post-list">
+    <?php /** $var $post \OpenTechiz\Blog\Model\Post */?>
+    <?php foreach ($block->getPosts() as $post): ?>
+        <li class="blog-post-list-item">
+            <h3 class="blog-post-item-title">
+                <a href="<?php echo $post->getUrlKey()?>"><? echo $post->getTitle();?></a>
+            </h3>
+
+            <div class="blog-post-item-content">
+                <?php  echo $post->getContent();?>
+            </div>
+
+            <div class="blog-post-item-meta">
+                <strong><?php echo __('Create at: ') ?></strong> <?php echo $post->getCreationTime() ?>
+            </div>
+        </li>
+    <?php endforeach;?>
+</ul>
+<?php
+//foreach ($block->getInfo() as $item):?>
+<!--<ul>-->
+<!--<li>-->
+<!--    <h3>-->
+<!--        --><?php //echo $item->getData()['title']; ?>
+<!--    </h3>-->
+<!--</li>-->
+<!---->
+<!--<li>-->
+<!--    <h4>-->
+<!--        --><?php //echo $item->getData()['content'];?>
+<!--    </h4>-->
+<!--</li>-->
+<!---->
+<!--<li>-->
+<!--    <h4>-->
+<!--        <a href=" --><?php //echo $item->getData()['url_key']; ?><!--">Link data</a>-->
+<!--    </h4>-->
+<!--</li>-->
+<!--    --><?php //endforeach;?>
+<!--<li>Hello ok nuon</li>-->
+<!--</ul>-->
+
+<?php
+//
+//foreach ($block->getPosts() as $item):?>
+<!--<ul>-->
+<!--    <li>-->
+<!--        <h3>-->
+<!--            --><?php //echo $item->getData()['title']; ?>
+<!--        </h3>-->
+<!--    </li>-->
+<!---->
+<!--    <li>-->
+<!--        <h4>-->
+<!--            --><?php //echo $item->getData()['content'];?>
+<!--        </h4>-->
+<!--    </li>-->
+<!---->
+<!--    <li>-->
+<!--        <h4>-->
+<!--            <a href=" --><?php //echo $item->getData()['url_key']; ?><!--">Link data</a>-->
+<!--        </h4>-->
+<!--    </li>-->
+<!--    --><?php //endforeach;?>
+<!--    <li>Hello this opentechiz</li>-->
+<!--</ul>-->
+

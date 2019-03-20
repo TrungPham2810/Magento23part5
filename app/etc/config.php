@@ -213,6 +213,7 @@ return [
         'Magento_WishlistSampleData' => 1,
         'Mageplaza_HelloWorld' => 1,
         'Mgt_DeveloperToolbar' => 1,
+        'Mirasvit_Blog' => 1,
         'OpenTechiz_Blog' => 1,
         'PHPCuong_BannerSlider' => 1,
         'Temando_Shipping' => 1,

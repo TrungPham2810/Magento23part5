@@ -1,5 +1,4 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
-
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
@@ -13,17 +12,4 @@
             <argument name="resourceModel" xsi:type="string">Mageplaza\HelloWorld\Model\ResourceModel\Post</argument>
         </arguments>
     </virtualType>
-
-    <type name="Mageplaza\HelloWorld\Controller\Index\Example">
-        <plugin name="Mageplaza_HelloWorld_Plugin" type="Mageplaza\HelloWorld\Plugin\ExamplePlugin" sortOrder="10" disabled="false"  />
-    </type>
-
-    <type name="Magento\Framework\Console\CommandList">
-        <arguments>
-            <argument name="commands" xsi:type="array">
-                <item name="exampleSayHello" xsi:type="object">Mageplaza\HelloWorld\Console\Sayhello</item>
-            </argument>
-        </arguments>
-    </type>
-
 </config>

@@ -11,19 +11,19 @@ interface PostInterface
     const IS_ACTICE = 'is_active';
 
     public function getId();
-//    public function getList();
-//    public function getUrlKey();
-//    public function getTitle();
-//    public function getContent();
-//    public function getCreationTime();
-//    public function getUpdateTime();
-//    public function isActive();
-//    public function setId($id);
-//    public function setUrlKey($url_key);
+    public function getList();
+    public function getUrlKey();
+    public function getTitle();
+    public function getContent();
+    public function getCreationTime();
+    public function getUpdateTime();
+    public function isActive();
+    public function setId($id);
+    public function setUrlKey($url_key);
 //    public function getUrl();
-//    public function setTitle($title);
-//    public function setContent($content);
-//    public function setCreationTime($creationTime);
-//    public function setUpdateTime($updateTime);
-//    public function setIsActive($updateTime);
+    public function setTitle($title);
+    public function setContent($content);
+    public function setCreationTime($creationTime);
+    public function setUpdateTime($updateTime);
+    public function setIsActive($isActive);
 }

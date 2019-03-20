@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <referenceContainer name="content">
-        <block class="OpenTechiz\Blog\Block\PostList" name="opentechizblog_index_index" template="OpenTechiz_Blog::index.phtml" />
+        <block class="OpenTechiz\Blog\Block\PostList" name="opentechizblog_index_index" template="OpenTechiz_Blog::list.phtml" />
     </referenceContainer>
 </page>

@@ -20,9 +20,11 @@ class InstallData implements InstallDataInterface
         $installer->startSetup();
         $data = [
             'url_key'         => "https://www.youtube.com/",
-            'title' => "Test model openteachiz",
-            'content'      => '/magento-2-module-development/magento-2-how-to-create-sql-setup-script.html',
-            'is_active'         => 1
+            'title'           => "Test model openteachiz",
+            'content'         => 'Each field in system.xml after create will not have any value. When you call them, you will receive ‘null’ result. 
+                                    So for the module, we will need to set the default value for the field and you will call the value without go to config, set value and save it. 
+                                    This default value will be saved in config.xml which is located in etc folder. Let’s create it for this simple configuration:',
+            'is_active'       => 1
         ];
 //        $post = $this->_postFactory->create();
 //        $post->addData($data)->save();
