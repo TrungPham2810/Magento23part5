@@ -29,6 +29,13 @@ class InstallData implements InstallDataInterface
 //        $post = $this->_postFactory->create();
 //        $post->addData($data)->save();
         $setup->getConnection()->insert($setup->getTable('opentechiz_blog_post'), $data);
+        $data2 = [
+            'blog_id'         => 1,
+            'customer_id'     => 2,
+            'comment'         => 'Each field in system.When you call them, you will receive ‘null’ result',
+            'status_id'       => 1
+        ];
+        $setup->getConnection()->insert($setup->getTable('comment_blog'), $data2);
         $installer->endSetup();
     }
 }

@@ -9,6 +9,7 @@
                             <resource id="OpenTechiz_Blog::save" title="Save Blog Posts" sortOrder="10" />
                             <resource id="OpenTechiz_Blog::post_delete" title="Delete Blog Post" sortOrder="20" />
                         </resource>
+                        <resource id="OpenTechiz_Blog::comment" title="Blog Comments" sortOrder="60"/>
                     </resource>
                 </resource>
             </resource>

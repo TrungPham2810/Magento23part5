@@ -23,7 +23,7 @@ class PostList extends \Magento\Framework\View\Element\Template
 
     public function getPosts()
     {
-        if(!$this->hasData('posts')) {
+        if(!$this->hasData('posts1')) {
             $posts = $this->_postCollectionFactory
                 ->create()
                 ->addFilter('is_active',1)
@@ -31,9 +31,9 @@ class PostList extends \Magento\Framework\View\Element\Template
                     PostInterface::CREATION_TIME
 //                    PostInterface::SORT_ORDER_DESC
                 );
-            $this->setData('posts',$posts);
+            $this->setData('posts1',$posts);
         }
-        return $this->getData('posts');
+        return $this->getData('posts1');
     }
 
     public function getInfo()
