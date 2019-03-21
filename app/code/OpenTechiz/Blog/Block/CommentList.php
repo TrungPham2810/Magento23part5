@@ -45,9 +45,12 @@ class CommentList extends \Magento\Framework\View\Element\Template
 
     public function getFormAction($data)
     {
-        $comment = $this->_commentFactory->create();
-        $collection = $comment->getCollection();
-        return $collection;
+        echo "hello form action";
+
+
+//        $comment = $this->_commentFactory->create();
+//        $collection = $comment->getCollection();
+//        return $collection;
 //        foreach($collection as $item){
 //            echo "<pre>";
 ////            $a = $item->getData();
