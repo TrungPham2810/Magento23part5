@@ -12,7 +12,10 @@ class Comment extends \Magento\Framework\Model\AbstractModel implements  Comment
     {
         $this->_init('OpenTechiz\Blog\Model\ResourceModel\Comment');
     }
-
+    public function getAvailableStatuses()
+    {
+        return [self::STATUS_ENABLED=>_('Enabled'), self::STATUS_DISABLED=>_('Disable')];
+    }
     public function getId()
     {
         return $this->getData(self::COMMENT_ID);
