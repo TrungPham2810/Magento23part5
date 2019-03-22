@@ -3,8 +3,9 @@ namespace OpenTechiz\Blog\Model;
 use OpenTechiz\Blog\Api\Data\CommentInterface;
 class Comment extends \Magento\Framework\Model\AbstractModel implements  CommentInterface
 {
-    const STATUS_ENABLED = 1;
-    const STATUS_DISABLED = 0;
+   const STATUS_ENABLED = 1;
+    const STATUS_DISABLED =2;
+    const STATUS_PENDING = 0;
 
     protected  $_eventPrefix = 'blog_post';
 
@@ -14,7 +15,7 @@ class Comment extends \Magento\Framework\Model\AbstractModel implements  Comment
     }
     public function getAvailableStatuses()
     {
-        return [self::STATUS_ENABLED=>_('Enabled'), self::STATUS_DISABLED=>_('Disable')];
+        return [self::STATUS_ENABLED=>_('Enabled'), self::STATUS_DISABLED=>_('Disable'),self::STATUS_PENDING=>_('Pending')];
     }
     public function getId()
     {

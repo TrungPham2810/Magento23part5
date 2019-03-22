@@ -1,7 +1,7 @@
 <?php
 namespace OpenTechiz\Blog\Controller\Adminhtml\Post;
 use Braintree\Collection;
-use Magento\ackend\App\Action\Context;
+use Magento\Backend\App\Action\Context;
 use Magento\Backend\App\Action;
 use Magento\Ui\Component\MassAction\Filter;
 use OpenTechiz\Blog\Model\ResourceModel\Post\CollectionFactory;

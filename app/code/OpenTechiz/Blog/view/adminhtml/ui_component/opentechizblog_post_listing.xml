@@ -25,7 +25,7 @@
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">PostGridDataProvider</argument>
             <argument name="name" xsi:type="string">opentechizblog_post_listing_data_source</argument>
-            <argument name="primaryFieldName" xsi:type="string">block_id</argument>
+            <argument name="primaryFieldName" xsi:type="string">post_id</argument>
             <argument name="requestFieldName" xsi:type="string">id</argument>
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -239,7 +239,7 @@
                     <item name="config" xsi:type="array">
                         <item name="type" xsi:type="string">delete</item>
                         <item name="label" xsi:type="string" translate="true">Delete</item>
-                        <item name="url" xsi:type="url" path="blog/post/massDelete"/>
+                        <item name="url" xsi:type="url" path="opentechizblog/post/massDelete"/>
                         <item name="confirm" xsi:type="array">
                             <item name="title" xsi:type="string" translate="true">Delete items</item>
                             <item name="message" xsi:type="string" translate="true">Are you sure you wan't to delete selected items?</item>
@@ -252,7 +252,7 @@
                     <item name="config" xsi:type="array">
                         <item name="type" xsi:type="string">disable</item>
                         <item name="label" xsi:type="string" translate="true">Disable</item>
-                        <item name="url" xsi:type="url" path="blog/post/massDisable"/>
+                        <item name="url" xsi:type="url" path="opentechizblog/post/massDisable"/>
                     </item>
                 </argument>
             </action>
@@ -261,7 +261,7 @@
                     <item name="config" xsi:type="array">
                         <item name="type" xsi:type="string">enable</item>
                         <item name="label" xsi:type="string" translate="true">Enable</item>
-                        <item name="url" xsi:type="url" path="blog/post/massEnable"/>
+                        <item name="url" xsi:type="url" path="opentechizblog/post/massEnable"/>
                     </item>
                 </argument>
             </action>

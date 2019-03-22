@@ -12,14 +12,14 @@
             <item name="deps" xsi:type="string">opentechizblog_comment_listing.opentechizblog_comment_listing_data_source</item>
         </item>
         <item name="spinner" xsi:type="string">blog_comment_columns</item>
-        <item name="buttons" xsi:type="array">
-            <item name="add" xsi:type="array">
-                <item name="name" xsi:type="string">add</item>
-                <item name="label" xsi:type="string" translate="true">Add New Post</item>
-                <item name="class" xsi:type="string">primary</item>
-                <item name="url" xsi:type="string">*/*/new</item>
-            </item>
-        </item>
+        <!--<item name="buttons" xsi:type="array">-->
+            <!--<item name="add" xsi:type="array">-->
+                <!--<item name="name" xsi:type="string">add</item>-->
+                <!--<item name="label" xsi:type="string" translate="true">Add New Post</item>-->
+                <!--<item name="class" xsi:type="string">primary</item>-->
+                <!--<item name="url" xsi:type="string">*/*/new</item>-->
+            <!--</item>-->
+        <!--</item>-->
     </argument>
     <dataSource name="opentechizblog_comment_listing_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
@@ -200,7 +200,7 @@
                     <item name="config" xsi:type="array">
                         <item name="type" xsi:type="string">delete</item>
                         <item name="label" xsi:type="string" translate="true">Delete</item>
-                        <item name="url" xsi:type="url" path="blog/comment/massDelete"/>
+                        <item name="url" xsi:type="url" path="opentechizblog/comment/massDelete"/>
                         <item name="confirm" xsi:type="array">
                             <item name="title" xsi:type="string" translate="true">Delete items</item>
                             <item name="message" xsi:type="string" translate="true">Are you sure you wan't to delete selected items?</item>
@@ -213,7 +213,7 @@
                     <item name="config" xsi:type="array">
                         <item name="type" xsi:type="string">disable</item>
                         <item name="label" xsi:type="string" translate="true">Disable</item>
-                        <item name="url" xsi:type="url" path="blog/comment/massDisable"/>
+                        <item name="url" xsi:type="url" path="opentechizblog/comment/massDisable"/>
                     </item>
                 </argument>
             </action>
@@ -222,7 +222,7 @@
                     <item name="config" xsi:type="array">
                         <item name="type" xsi:type="string">enable</item>
                         <item name="label" xsi:type="string" translate="true">Enable</item>
-                        <item name="url" xsi:type="url" path="blog/comment/massEnable"/>
+                        <item name="url" xsi:type="url" path="opentechizblog/comment/massEnable"/>
                     </item>
                 </argument>
             </action>
@@ -307,7 +307,7 @@
                 </item>
             </argument>
         </column>
-        <column name="author">
+        <column name="comment">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
@@ -317,18 +317,28 @@
                             <item name="required-entry" xsi:type="boolean">true</item>
                         </item>
                     </item>
-                    <item name="label" xsi:type="string" translate="true">Author</item>
+                    <item name="label" xsi:type="string" translate="true">comment</item>
                 </item>
             </argument>
         </column>
-        <column name="post_id">
+
+        <column name="blog_id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="label" xsi:type="string" translate="true">Post ID</item>
                 </item>
             </argument>
         </column>
-        <column name="is_active">
+
+        <column name="customer_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Customer ID</item>
+                </item>
+            </argument>
+        </column>
+
+        <column name="status_id">
             <argument name="data" xsi:type="array">
                 <item name="options" xsi:type="object">OpenTechiz\Blog\Model\Comment\Source\IsActive</item>
                 <item name="config" xsi:type="array">
@@ -340,7 +350,7 @@
                 </item>
             </argument>
         </column>
-        <column name="creation_time" class="Magento\Ui\Component\Listing\Columns\Date">
+        <column name="created_at" class="Magento\Ui\Component\Listing\Columns\Date">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">dateRange</item>

@@ -7,8 +7,8 @@ use Magento\Framework\UrlInterface;
 class CommentActions extends Column
 {
     /** Url path */
-    const BLOG_URL_PATH_EDIT_COMMENT = 'blog/comment/edit';
-    const BLOG_URL_PATH_DELETE_COMMENT = 'blog/comment/delete';
+    const BLOG_URL_PATH_EDIT_COMMENT = 'opentechizblog/comment/edit';
+    const BLOG_URL_PATH_DELETE_COMMENT = 'opentechizblog/comment/delete';
     /** @var UrlInterface */
     protected $urlBuilder;
     /**

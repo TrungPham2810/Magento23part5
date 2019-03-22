@@ -45,19 +45,7 @@ class CommentList extends \Magento\Framework\View\Element\Template
 
     public function getFormAction($data)
     {
-        echo "hello form action";
-
-
-//        $comment = $this->_commentFactory->create();
-//        $collection = $comment->getCollection();
-//        return $collection;
-//        foreach($collection as $item){
-//            echo "<pre>";
-////            $a = $item->getData();
-////            echo $a['post_id'];
-//            print_r($item->getData());
-//            echo "</pre>";
-//        }
+        return 'opentechizblog/comment/save';
     }
 
 }

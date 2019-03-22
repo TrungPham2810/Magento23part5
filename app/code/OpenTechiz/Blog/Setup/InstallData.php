@@ -19,7 +19,7 @@ class InstallData implements InstallDataInterface
         $installer = $setup;
         $installer->startSetup();
         $data = [
-            'url_key'         => "https://www.youtube.com/",
+            'url_key'         => "http://magento23part5.local/opentechizblog/view/index",
             'title'           => "Test model openteachiz",
             'content'         => 'Each field in system.xml after create will not have any value. When you call them, you will receive ‘null’ result. 
                                     So for the module, we will need to set the default value for the field and you will call the value without go to config, set value and save it. 
@@ -33,7 +33,7 @@ class InstallData implements InstallDataInterface
             'blog_id'         => 1,
             'customer_id'     => 2,
             'comment'         => 'Each field in system.When you call them, you will receive ‘null’ result',
-            'status_id'       => 1
+            'status_id'       => 0
         ];
         $setup->getConnection()->insert($setup->getTable('comment_blog'), $data2);
         $installer->endSetup();
