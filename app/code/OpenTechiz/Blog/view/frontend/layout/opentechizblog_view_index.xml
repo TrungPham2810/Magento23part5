@@ -5,7 +5,6 @@
             <block class="OpenTechiz\Blog\Block\PostView" name="post.content" template="OpenTechiz_Blog::view.phtml" />
             <block class="OpenTechiz\Blog\Block\CommentList" name="post.comment" template="OpenTechiz_Blog::comment_list.phtml"/>
             <block class="OpenTechiz\Blog\Block\SaveComment" name="add.comment" template="OpenTechiz_Blog::comment_form.phtml" />
-            <referenceBlock name="page.main.title" remove="true" />
         </referenceContainer>
     </body>
 </page>
