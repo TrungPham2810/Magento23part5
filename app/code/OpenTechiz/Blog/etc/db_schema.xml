@@ -21,7 +21,7 @@
                 comment="Customer ID"/>
 
         <column xsi:type="smallint" name="status_id" padding="5" unsigned="true" nullable="false" identity="false"
-                default="0" comment="Status Id"/>
+                default="2" comment="Status Id"/>
 
         <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
                 comment="Created At"/>

@@ -33,7 +33,7 @@ class InstallData implements InstallDataInterface
             'blog_id'         => 1,
             'customer_id'     => 2,
             'comment'         => 'Each field in system.When you call them, you will receive ‘null’ result',
-            'status_id'       => 0
+            'status_id'       => 2
         ];
         $setup->getConnection()->insert($setup->getTable('comment_blog'), $data2);
         $installer->endSetup();
