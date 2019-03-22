@@ -4,8 +4,8 @@ use OpenTechiz\Blog\Api\Data\CommentInterface;
 class Comment extends \Magento\Framework\Model\AbstractModel implements  CommentInterface
 {
    const STATUS_ENABLED = 1;
-    const STATUS_DISABLED =2;
-    const STATUS_PENDING = 0;
+    const STATUS_DISABLED =0;
+    const STATUS_PENDING = 2;
 
     protected  $_eventPrefix = 'blog_post';
 
