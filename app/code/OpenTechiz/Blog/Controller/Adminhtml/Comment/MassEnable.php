@@ -42,7 +42,7 @@ class MassEnable extends \Magento\Backend\App\Action
             ['comments' => $collection]
         );
         foreach ($collection as $item) {
-            $item->setIsActive(true);
+            $item->setStatusId(true);
             $item->save();
         }
         $this->messageManager->addSuccess(__('A total of %1 record(s) have been enabled.', $collection->getSize()));
