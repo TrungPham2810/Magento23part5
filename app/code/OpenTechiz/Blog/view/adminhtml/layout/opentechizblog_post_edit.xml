@@ -3,7 +3,7 @@
     <update handle="styles"/>
     <body>
         <referenceContainer name="content">
-            <uiComponent name="opentechizblog_post_listing"/>
+            <uiComponent name="opentechizblog_post_form"/>
         </referenceContainer>
     </body>
 </page>
