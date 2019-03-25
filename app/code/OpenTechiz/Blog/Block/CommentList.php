@@ -8,17 +8,20 @@ class CommentList extends \Magento\Framework\View\Element\Template
 {
     protected  $_commentFactory;
     protected  $_commentCollectionFactory;
+    protected $_registry;
 
     public function __construct(
         Template\Context $context,
         array $data = [],
         \OpenTechiz\Blog\Model\CommentFactory $commentFactory,
-        \OpenTechiz\Blog\Model\ResourceModel\Comment\CollectionFactory $commentCollectionFactory
+        \OpenTechiz\Blog\Model\ResourceModel\Comment\CollectionFactory $commentCollectionFactory,
+        \Magento\Framework\Registry $registry
     )
     {
         parent::__construct($context, $data);
         $this->_commentFactory = $commentFactory;
         $this->_commentCollectionFactory = $commentCollectionFactory;
+        $this->_registry = $registry;
     }
 
     public function getComments()
@@ -26,7 +29,14 @@ class CommentList extends \Magento\Framework\View\Element\Template
 
         $comment = $this->_commentFactory->create();
         $collection = $comment->getCollection();
-        return $collection;
+        $post_id = $this->_registry->registry('post_id');
+        $commentlist = [];
+        foreach ($collection as $comments) {
+            if ($comments->getBlogId() == $post_id ) {
+                array_push($commentlist, $comments);
+            }
+    }
+        return $commentlist;
 //        $comment = $this->_commentFactory->create();
 //        $collection = $comment->getCollection();
 //        return $collection;

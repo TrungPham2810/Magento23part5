@@ -46,11 +46,11 @@ class Comment extends \Magento\Framework\Model\AbstractModel implements  Comment
     }
     public function setId($id)
     {
-        return $this->setData(self::ID, $id);
+        return $this->setData(self::COMMENT_ID, $id);
     }
     public function setBlogId($blogId)
     {
-        return $this->setData(self::BLOG, $blogId);
+        return $this->setData(self::BLOG_ID, $blogId);
     }
 //    public function getUrl()
     public function setCustomerId($customerId)
@@ -63,7 +63,7 @@ class Comment extends \Magento\Framework\Model\AbstractModel implements  Comment
     }
     public function setComment($comment)
     {
-        return $this->setData(self::CONTENT, $comment);
+        return $this->setData(self::COMMENT, $comment);
     }
     public function setCreationAt($creationTime)
     {
