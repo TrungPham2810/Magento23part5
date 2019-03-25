@@ -52,47 +52,33 @@ class Save extends Action
         $error = false;
         $message = '';
         $postData = (array) $this->getRequest()->getPostValue();
-////        var_dump($postData);
-////        $resultRedirect = $this->resultRedirect->create(ResultFactory::TYPE_REDIRECT);
-////        $resultRedirect->setUrl($this->_redirect->getRefererUrl());
-//        $model = $this->_commentFactory->create();
-//        $model->addData([
-//            "comment" => $postData['comment'],
-//            "blog_id" => $postData['blog_id'],
-//            "status_id" => 2,
-//            "customer_id" => $postData['customer_id']
-//        ]);
-//        $model->save();
-//        echo 'success';
-//        $saveData = $model->save();
-
-//        if($saveData){
-//            $this->messageManager->addSuccess( __('Insert Record Successfully !') );
-//        }
-//        return $resultRedirect;
-
-
+//        var_dump($postData);
+        $jsonResultResponse = $this->_resultJsonFactory->create();
         if(!$postData)
         {
             $error = true;
             $message = "Your submission is not valid. Please try again!";
+
         }
         $this->_inlineTranslation->suspend();
         $postObject = new \Magento\Framework\DataObject();
         $postObject->setData($postData);
 
+//        $jsonResultResponse = $this->_resultJsonFactory->create();
         // declare user
-        $customer = null;
+//        $customer = null;
         if(!$this->_customerSession->isLoggedIn())
         {
             $error = true;
             $message = "You need log in to comment";
+
         }
 //
 //
-        $jsonResultResponse = $this->_resultJsonFactory->create();
+
         if(!$error)
         {
+            // save data to database
             $model = $this->_commentFactory->create();
             $model->addData([
                 "comment" => $postData['comment'],
@@ -102,24 +88,13 @@ class Save extends Action
             ]);
             $model->save();
 //            echo 'success';
-
-            // save data to database
-//            $customer_id = $postData['customer_id'];
-//            $comment = $postData['comment'];
-//            $blog_id = $postData['blog_id'];
-//
-//            $comment = $this->_commentFactory->create();
-//            $comment->setCustomerId($customer_id);
-//            $comment->setComment($comment);
-//            $comment->setBlogId($blog_id);
-//            $comment->save();
             $jsonResultResponse->setData([
                 'result' => 'success',
                 'message' => 'Thank you for your submission. Our Admins will review and approve shortly'
             ]);
-//
-//            // send email to user
-////            $this->_sendEmail->approvalEmail($email, $author);
+////
+////            // send email to user
+//////            $this->_sendEmail->approvalEmail($email, $author);
         } else {
             $jsonResultResponse->setData([
                 'result' => 'error',
@@ -129,4 +104,90 @@ class Save extends Action
 
         return $jsonResultResponse;
     }
+
+//    public function execute()
+//    {
+//        $error = false;
+//        $message = '';
+//        $postData = (array) $this->getRequest()->getPostValue();
+////        var_dump($postData);
+//////        $resultRedirect = $this->resultRedirect->create(ResultFactory::TYPE_REDIRECT);
+//////        $resultRedirect->setUrl($this->_redirect->getRefererUrl());
+////        $model = $this->_commentFactory->create();
+////        $model->addData([
+////            "comment" => $postData['comment'],
+////            "blog_id" => $postData['blog_id'],
+////            "status_id" => 2,
+////            "customer_id" => $postData['customer_id']
+////        ]);
+////        $model->save();
+////        echo 'success';
+////        $saveData = $model->save();
+//
+////        if($saveData){
+////            $this->messageManager->addSuccess( __('Insert Record Successfully !') );
+////        }
+////        return $resultRedirect;
+//
+//
+//        if(!$postData)
+//        {
+//            $error = true;
+//            $message = "Your submission is not valid. Please try again!";
+//        }
+//        $this->_inlineTranslation->suspend();
+//        $postObject = new \Magento\Framework\DataObject();
+//        $postObject->setData($postData);
+//
+//        // declare user
+//        $customer = null;
+//        if(!$this->_customerSession->isLoggedIn())
+//        {
+//            $error = true;
+//            $message = "You need log in to comment";
+//        }
+////
+////
+//        $jsonResultResponse = $this->_resultJsonFactory->create();
+//        if(!$error)
+//        {
+//            // save data to database
+//            $model = $this->_commentFactory->create();
+//            $model->addData([
+//                "comment" => $postData['comment'],
+//                "blog_id" => $postData['blog_id'],
+//
+//                "customer_id" => $postData['customer_id']
+//            ]);
+//            $model->save();
+////            echo 'success';
+//
+//            // save data to database
+////            $customer_id = $postData['customer_id'];
+////            $comment = $postData['comment'];
+////            $blog_id = $postData['blog_id'];
+////
+////            $comment = $this->_commentFactory->create();
+////            $comment->setCustomerId($customer_id);
+////            $comment->setComment($comment);
+////            $comment->setBlogId($blog_id);
+////            $comment->save();
+//            $jsonResultResponse->setData([
+////                'result' => 'success',
+//                'message' => 'Thank you for your submission. Our Admins will review and approve shortly'
+//            ]);
+//////
+//////            // send email to user
+////////            $this->_sendEmail->approvalEmail($email, $author);
+//        } else {
+//            $jsonResultResponse->setData([
+//                'result' => 'error',
+//                'message' => $message
+//            ]);
+//        }
+//
+//        return $jsonResultResponse;
+//    }
+
+
 }
