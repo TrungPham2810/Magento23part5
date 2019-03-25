@@ -92,9 +92,15 @@ class Save extends Action
                 'result' => 'success',
                 'message' => 'Thank you for your submission. Our Admins will review and approve shortly'
             ]);
-////
+            $userInfo = $this->_customerSession->getCustomerData();
+            $name = $userInfo->getFirstName()." ".$userInfo->getLastName();
+            $email = $userInfo->getEmail();
+            echo $name;
+            echo $email;
 ////            // send email to user
-//////            $this->_sendEmail->approvalEmail($email, $author);
+            $this->_sendEmail->approvalEmail($email, $name);
+
+//            echo 'success';
         } else {
             $jsonResultResponse->setData([
                 'result' => 'error',
