@@ -1,7 +1,6 @@
 <?php
 namespace OpenTechiz\Blog\Block;
-class PostView extends \Magento\Framework\View\Element\Template implements
-    \Magento\Framework\DataObject\IdentityInterface
+class PostView extends \Magento\Framework\View\Element\Template
 {
     protected $_commentCollectionFactory;
     protected $_registry;
@@ -55,11 +54,12 @@ class PostView extends \Magento\Framework\View\Element\Template implements
         $comments = $this->_commentCollectionFactory
             ->create()
             ->addFieldToFilter('comment_id', $this->getID())
-            ->addFieldToFilter('is_active', '1');
+            ->addFieldToFilter('status_id', '1');
         foreach ($comments as $comment) {
             $identities = array_merge($identities,
                 [\OpenTechiz\Blog\Model\Comment::CACHE_COMMENT_POST_TAG."_".$comment->getID()]);
         }
         return ($identities);
+//        return 'ok';
     }
 }
