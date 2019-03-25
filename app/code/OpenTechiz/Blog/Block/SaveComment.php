@@ -21,31 +21,35 @@ class SaveComment extends \Magento\Framework\View\Element\Template
 
     public function getFormAction()
     {
-        return '/magento2/blog/comment/save';
+        return '/opentechizblog/comment/save';
     }
 
     public function getAjaxUrl()
     {
-        return '/magento2/blog/comment/load';
+        return '/opentechizblog/comment/load';
     }
 
-    public function getPostID()
+    public function getPostId()
     {
-        return $this->_request->getParam('post_id', false);
+        return $this->_request->getParam('id', false);
     }
 
     public function getAjaxNotificationLoadUrl()
     {
-        return '/magento2/blog/notification/load';
+        return '/opentechizblog/notification/load';
     }
 
     public function getSeenUrl()
     {
-        return '/magento2/blog/notification/load';
+        return '/opentechizblog/notification/load';
     }
     public function isLoggedIn()
     {
         return $this->_customerSession->isLoggedIn();
+    }
+    public function getCustomerId()
+    {
+        return $this->_customerSession->getCustomer()->getId();
     }
 
 }
