@@ -1,7 +1,8 @@
-<h1>hello comment form</h1>
-<form action="" method="post" class="comment_form"  >
-    <input type="type" name="blog_id" value="<?php echo $block->getPostId();?>">
-    <input type="type" name="customer_id" value="<?php echo $block->getCustomerId();?>">
+
+<!--<form action="--><?//= $block->getUrl('opentechizblog/comment/save'); ?><!--" method="post" id="comment-form"  >-->
+<form action="" method="post" id="comment-form"  >
+    <input type="hidden" name="blog_id" value="<?php echo $block->getPostId();?>">
+    <input type="hidden" name="customer_id" value="<?php echo $block->getCustomerId();?>">
 <!--    <input type="type" name="test" value="--><?php //echo $block->isLoggedIn();?><!--">-->
     <input type="text" name='comment' required placeholder='Add Comment' >
     <br>
@@ -13,7 +14,7 @@
 <script type = "text/x-magento-init">
     {
         "*" : {
-                "OpenTechiz/js/commentajax";{
+                "OpenTechiz_Blog/js/commentajax":{
                     "AjaxCommentPostUrl": "<?php echo $form_url; ?>"
                     }
               }
