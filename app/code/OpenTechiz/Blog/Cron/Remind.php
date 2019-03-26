@@ -27,7 +27,7 @@ class Remind {
         $comments = $this->_commentCollectionFactory
                 ->create()
                 ->addFieldToFilter('status_id', 2)
-                ->addFieldToFilter('creation_time', ["lteq" => $from]);
+                ->addFieldToFilter('created_at', ["lteq" => $from]);
 
         $commentCount = $comments->count();
         // get admins list
