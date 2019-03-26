@@ -1,51 +1,32 @@
-<h1><?php echo __('List comment 2')?></h1>
+<h2><?php echo __('List comment 2')?></h2>
 
 <ul class="blog-post-list">
     <?php /** $var $post \OpenTechiz\Blog\Model\Post */?>
-    <?php foreach ($block->getComments() as $post): ?>
+    <?php foreach ($block->getComments() as $post):
+        if ($post->getStatusId() == 1) {
+        ?>
+
         <li class="blog-post-list-item">
             <h3 class="blog-post-item-title">
-                <?php echo $post->getCustomerId();?>
+                <?php echo $block->getNameUser($post->getCustomerId()) ;?>
             </h3>
 
-            <div class="blog-post-item-content">
-                <?php  echo $post->getBlogId();?>
-            </div>
+<!--            <div class="blog-post-item-content">-->
+<!--                --><?php // echo $post->getBlogId();?>
+<!--            </div>-->
 
             <div class="blog-post-item-content">
                 <?php  echo $post->getComment();?>
             </div>
 
-            <div class="blog-post-item-content">
-                <?php  echo $post->getStatusId();?>
-            </div>
+<!--            <div class="blog-post-item-content">-->
+<!--                --><?php // echo $post->getStatusId();?>
+<!--            </div>-->
 
             <div class="blog-post-item-meta">
                 <strong><?php echo __('Create at: ') ?></strong> <?php echo $post->getCreationAt() ?>
             </div>
         </li>
-    <?php endforeach;?>
+    <?php }
+        endforeach;?>
 </ul>
-
-
-<!--<ul class="comment_list">-->
-<!--    --><?php ///** $var $post \OpenTechiz\Blog\Model\Post */?>
-<!--    --><?php //foreach ($block->getPosts() as $post):
-//        if($post->getStatusId() == 1) {
-//        ?>
-<!--        <li class="comment_list-item">-->
-<!--            <div class="blog-post-item-user">-->
-<!--                --><?php //echo $post->getCustomer();?>
-<!--            </div>-->
-<!---->
-<!--            <div class="comment_list-item-meta">-->
-<!--                <strong>--><?php //echo __('Create at: ') ?><!--</strong> --><?php //echo $post->getCreationTime() ?>
-<!--            </div>-->
-<!--            <div class="comment_list-item-comment">-->
-<!--                --><?php // echo $post->getComment();?>
-<!--            </div>-->
-<!---->
-<!--        </li>-->
-<!--    --><?php //};?>
-<!--    --><?php //endforeach;?>
-<!--</ul>-->
