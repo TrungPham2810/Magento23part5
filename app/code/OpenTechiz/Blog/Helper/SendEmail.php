@@ -7,7 +7,7 @@ class SendEmail extends \Magento\Framework\App\Helper\AbstractHelper
     protected $_transportBuilder;
 
     protected $_scopeConfig;
-    
+
     public function __construct(
         \Magento\Framework\Mail\Template\TransportBuilder $transportBuilder,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
