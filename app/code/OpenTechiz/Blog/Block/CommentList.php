@@ -9,21 +9,28 @@ class CommentList extends \Magento\Framework\View\Element\Template
     protected  $_commentFactory;
     protected  $_commentCollectionFactory;
     protected $_registry;
+    protected $_customerRepository;
+
 
     public function __construct(
         Template\Context $context,
         array $data = [],
         \OpenTechiz\Blog\Model\CommentFactory $commentFactory,
         \OpenTechiz\Blog\Model\ResourceModel\Comment\CollectionFactory $commentCollectionFactory,
+        \Magento\Customer\Api\CustomerRepositoryInterfaceFactory $customerRepositoryFactory,
         \Magento\Framework\Registry $registry
     )
     {
         parent::__construct($context, $data);
         $this->_commentFactory = $commentFactory;
+        $this->_customerRepository = $customerRepositoryFactory;
         $this->_commentCollectionFactory = $commentCollectionFactory;
         $this->_registry = $registry;
     }
-
+public function getNameUser($id) {
+   $userInfo = $this->_customerRepository->create()->getById($id);
+   return $userInfo->getFirstName()." ".$userInfo->getLastName();
+}
     public function getComments()
     {
 
