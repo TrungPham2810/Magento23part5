@@ -1,9 +1,6 @@
-
-<!--<form action="--><?//= $block->getUrl('opentechizblog/comment/save'); ?><!--" method="post" id="comment-form"  >-->
 <form action="" method="post" id="comment-form"  >
     <input type="hidden" name="blog_id" value="<?php echo $block->getPostId();?>">
     <input type="hidden" name="customer_id" value="<?php echo $block->getCustomerId();?>">
-<!--    <input type="type" name="test" value="--><?php //echo $block->isLoggedIn();?><!--">-->
     <input type="text" name='comment' required placeholder='Add Comment' >
     <br>
     <input type="submit" class="submit" name='submit' value='Submit'>
