@@ -15,15 +15,24 @@ define([
             if(dataForm.valid()) {
                 event.preventDefault();
                 var param = dataForm.serialize();
-                alert(param);
+                // alert(param);
+                // alert('ok nuon');
                 $.ajax({
                     showLoader: true,
                     url: AjaxCommentPostUrl,
                     data: param,
                     type: "POST"
                 }).done(function (data) {
-                    $('.note').html(data);
-                    $('.note').css('color','red');
+                    console.log(data);
+                    if (data.result == 'error') {
+                        $('.note').html(data.message);
+                        $('.note').css('color','red');
+                    } else {
+                        $('.note').html(data.message);
+                        $('.note').css('color','green');
+                    }
+
+                    // alert('success');
                     document.getElementById('comment-form').reset();
                     return true;
                 });
